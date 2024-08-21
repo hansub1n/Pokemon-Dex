@@ -1,14 +1,17 @@
 import React from "react";
-import Dashboard from "../components/Dashboard";
-import PockemonCard from "../components/PockemonCard";
-import PokemonList from "../components/PokemonList";
-
+import { useNavigate } from "react-router-dom";
 const Home = () => {
+	const navigate = useNavigate();
 	return (
 		<div>
-			<Dashboard />
-			<PokemonList />
-			<PockemonCard />
+			<h1>포켓몬 도감</h1>
+			<button
+				onClick={() => {
+					navigate("/dex");
+				}}
+			>
+				포켓몬 도감 시작하기
+			</button>
 		</div>
 	);
 };
