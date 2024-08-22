@@ -7,7 +7,17 @@ const Dashboard = ({ selectedPokemons, removePokemon }) => {
 		alert("포켓몬은 최대 여섯개까지만 선택 가능합니다.");
 		return;
 	}
-	// if (selectedPokemons.)
+	// const existedPokemon = (targetPokemon) => {
+	// 	return selectedPokemons.find((pokemon) => {
+	// 		pokemon.korean_name === targetPokemon.korean_name;
+	// 	});
+	// };
+
+	// if (existedPokemon) {
+	// 	alert("이미 존재하는 포켓몬입니다.");
+	// 	return;
+	// }
+
 	if (selectedPokemons.length === 0) {
 		return (
 			<StDashboard>
