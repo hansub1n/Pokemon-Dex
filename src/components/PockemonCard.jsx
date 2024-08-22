@@ -34,4 +34,13 @@ export default PockemonCard;
 const StCard = styled.div`
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 160px;
+	height: 230px;
+	padding: 10px;
+	box-sizing: border-box;
+	background-color: #ffffff;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
 `;

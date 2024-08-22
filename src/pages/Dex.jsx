@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Dashboard from "../components/Dashboard";
 import PokemonList from "../components/PokemonList";
 import MOCK_DATA from "../mock";
+import styled from "styled-components";
 
 const Dex = () => {
 	const [selectedPokemons, setSelectedPokemons] = useState([]);
@@ -19,14 +20,18 @@ const Dex = () => {
 	};
 
 	return (
-		<div>
+		<StDex>
 			<Dashboard
 				selectedPokemons={selectedPokemons}
 				removePokemon={removePokemon}
 			/>
 			<PokemonList pokemonData={MOCK_DATA} addPokemon={addPokemon} />
-		</div>
+		</StDex>
 	);
 };
 
 export default Dex;
+
+const StDex = styled.div`
+	margin: 30px;
+`;

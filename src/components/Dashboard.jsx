@@ -9,20 +9,26 @@ const Dashboard = ({ selectedPokemons, removePokemon }) => {
 	}
 	// if (selectedPokemons.)
 	if (selectedPokemons.length === 0) {
-		return <p>선택된 포켓몬이 없습니다!</p>;
+		return (
+			<StDashboard>
+				<StDashboardP>선택된 포켓몬이 없습니다!</StDashboardP>
+			</StDashboard>
+		);
 	} else {
 		return (
 			<StDashboard>
-				{selectedPokemons.map((pokemon) => {
-					return (
-						<PockemonCard
-							key={pokemon.id}
-							pokemon={pokemon}
-							removePokemon={removePokemon}
-							isSelected={true}
-						/>
-					);
-				})}
+				<StSelectedPokemonCards>
+					{selectedPokemons.map((pokemon) => {
+						return (
+							<PockemonCard
+								key={pokemon.id}
+								pokemon={pokemon}
+								removePokemon={removePokemon}
+								isSelected={true}
+							/>
+						);
+					})}
+				</StSelectedPokemonCards>
 			</StDashboard>
 		);
 	}
@@ -31,7 +37,32 @@ const Dashboard = ({ selectedPokemons, removePokemon }) => {
 export default Dashboard;
 
 const StDashboard = styled.div`
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 1200px;
+	height: 200px;
+	padding: 20px;
+	margin-bottom: 50px;
+	background-color: #f8f8f8;
+	border-radius: 15px;
+	box-sizing: border-box;
+`;
+const StDashboardP = styled.p`
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
+const StSelectedPokemonCards = styled.div`
+	position: absolute;
 	display: flex;
 	flex-wrap: wrap;
-	gap: 30px;
+	flex-direction: row;
+	gap: 50px;
+	justify-content: center;
+	align-items: center;
+	padding: 50px;
+	box-sizing: border-box;
 `;
