@@ -25,10 +25,10 @@ const StCardContainer = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
-	gap: 50px;
+	gap: 30px;
 	justify-content: center;
 	align-items: center;
-	padding: 20px;
+	padding: 30px;
 	box-sizing: border-box;
 	background-color: #f0f0f0;
 	border-radius: 15px;

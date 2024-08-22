@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import MOCK_DATA from "../mock";
+import styled from "styled-components";
 
 const Detail = () => {
 	const navigate = useNavigate();
@@ -16,12 +17,12 @@ const Detail = () => {
 	const { img_url, korean_name, types, description } =
 		pokemonDetail(pokemonId);
 	return (
-		<div>
-			<h1> {korean_name} 나와랏!</h1>
-			<img src={img_url} />
-			<p>{korean_name}</p>
-			<p>타입: {types.join(", ")}</p>
-			<p>{description}</p>
+		<StDetail>
+			<StDetailtitle>가랏! {korean_name}!</StDetailtitle>
+			<StDetailImg src={img_url} />
+			<StDetailName>{korean_name}</StDetailName>
+			<StDetailP>타입: {types.join(", ")}</StDetailP>
+			<StDetailP>{description}</StDetailP>
 
 			<button
 				onClick={() => {
@@ -30,8 +31,35 @@ const Detail = () => {
 			>
 				뒤로 가기
 			</button>
-		</div>
+		</StDetail>
 	);
 };
 
 export default Detail;
+
+const StDetail = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 90vh;
+`;
+const StDetailtitle = styled.h1`
+	font-size: 50px;
+	margin-bottom: 70px;
+`;
+
+const StDetailImg = styled.img`
+	width: 300px;
+	height: 300px;
+`;
+
+const StDetailName = styled.p`
+	font-size: 25px;
+	font-weight: 600;
+	margin: 10px 0;
+`;
+
+const StDetailP = styled.p`
+	margin-bottom: 30px;
+`;

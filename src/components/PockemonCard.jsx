@@ -12,7 +12,7 @@ const PockemonCard = ({ pokemon, addPokemon, removePokemon, isSelected }) => {
 					navigate(`/pokemon-detail?id=${pokemon.id}`);
 				}}
 			>
-				<img src={img_url} />
+				<StCardImg src={img_url} />
 				<p>{korean_name}</p>
 				<p>No.{id}</p>
 			</div>
@@ -46,11 +46,15 @@ const StCard = styled.div`
 	align-items: center;
 	text-align: center;
 	width: 160px;
-	height: 230px;
 	padding: 10px;
 	box-sizing: border-box;
 	background-color: #ffffff;
 	border-radius: 10px;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
 	cursor: pointer;
+`;
+
+const StCardImg = styled.img`
+	width: 100px;
+	height: 100px;
 `;

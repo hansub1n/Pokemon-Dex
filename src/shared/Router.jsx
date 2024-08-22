@@ -17,6 +17,3 @@ const Router = () => {
 };
 
 export default Router;
-{
-	/* <Route path="pokemon-detail/" element={<PokemonDetail />}/> */
-}
