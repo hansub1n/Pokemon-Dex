@@ -40,10 +40,12 @@ const Dex = () => {
 				value={{
 					removePokemon,
 					addPokemon,
+					selectedPokemons,
+					pokemonData: MOCK_DATA,
 				}}
 			>
-				<Dashboard selectedPokemons={selectedPokemons} />
-				<PokemonList pokemonData={MOCK_DATA} />
+				<Dashboard />
+				<PokemonList />
 			</PokemonContext.Provider>
 		</StDex>
 	);

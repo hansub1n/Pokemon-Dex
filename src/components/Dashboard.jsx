@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import PockemonCard from "./PockemonCard";
 import styled from "styled-components";
+import { PokemonContext } from "../context/PokemonContext";
 
-const Dashboard = ({ selectedPokemons }) => {
+const Dashboard = () => {
+	const { selectedPokemons } = useContext(PokemonContext);
+	console.log(selectedPokemons);
 	if (selectedPokemons.length === 0) {
 		return (
 			<StDashboard>
