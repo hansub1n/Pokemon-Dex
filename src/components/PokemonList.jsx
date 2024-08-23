@@ -2,7 +2,7 @@ import React from "react";
 import PockemonCard from "./PockemonCard";
 import styled from "styled-components";
 
-const PokemonList = ({ pokemonData, addPokemon }) => {
+const PokemonList = ({ pokemonData }) => {
 	return (
 		<StCardContainer>
 			{pokemonData.map((pokemon) => {
@@ -10,7 +10,6 @@ const PokemonList = ({ pokemonData, addPokemon }) => {
 					<PockemonCard
 						key={pokemon.id}
 						pokemon={pokemon}
-						addPokemon={addPokemon}
 						isSelected={false}
 					/>
 				);

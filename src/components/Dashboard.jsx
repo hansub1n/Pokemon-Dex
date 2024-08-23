@@ -2,7 +2,7 @@ import React from "react";
 import PockemonCard from "./PockemonCard";
 import styled from "styled-components";
 
-const Dashboard = ({ selectedPokemons, removePokemon }) => {
+const Dashboard = ({ selectedPokemons }) => {
 	if (selectedPokemons.length === 0) {
 		return (
 			<StDashboard>
@@ -23,7 +23,6 @@ const Dashboard = ({ selectedPokemons, removePokemon }) => {
 								<PockemonCard
 									key={pokemon.id}
 									pokemon={pokemon}
-									removePokemon={removePokemon}
 									isSelected={true}
 								/>
 							);
