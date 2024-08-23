@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
 import PockemonCard from "./PockemonCard";
 import styled from "styled-components";
-import { PokemonContext } from "../context/PokemonContext";
 
-const PokemonList = () => {
-	const { pokemonData } = useContext(PokemonContext);
+const PokemonList = ({ pokemonData }) => {
 	return (
 		<StCardContainer>
 			{pokemonData.map((pokemon) => {

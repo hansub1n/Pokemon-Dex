@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Dashboard from "../components/Dashboard";
 import PokemonList from "../components/PokemonList";
 import MOCK_DATA from "../mock";
@@ -40,12 +40,10 @@ const Dex = () => {
 				value={{
 					removePokemon,
 					addPokemon,
-					selectedPokemons,
-					pokemonData: MOCK_DATA,
 				}}
 			>
-				<Dashboard />
-				<PokemonList />
+				<Dashboard selectedPokemons={selectedPokemons} />
+				<PokemonList pokemonData={MOCK_DATA} />
 			</PokemonContext.Provider>
 		</StDex>
 	);
