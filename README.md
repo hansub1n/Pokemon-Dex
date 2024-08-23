@@ -1,8 +1,45 @@
-# React + Vite
+# Pokemon Dex (포켓몬 도감)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#### 리액트 숙련주차 개인과제
 
-Currently, two official plugins are available:
+포켓몬 도감을 구현한 웹 애플리케이션입니다. 사용자는 포켓몬 리스트에서 포켓몬을 선택하고, 선택한 포켓몬의 상세 정보를 확인할 수 있습니다.<br/><br/>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### 프로젝트 구조
+
+홈페이지, 도감 페이지, 포켓몬 디테일 페이지로 구성되어 있습니다. 도감 페이지는 대시보드와 포켓몬 리스트 컴포넌트로 나뉘며, 두 컴포넌트 모두 포켓몬 카드 컴포넌트를 사용합니다. 포켓몬 카드 컴포넌트는 포켓몬의 정보를 표시하는 데 활용됩니다.<br/><br/>
+
+#### 실행 방법
+
+1. **홈페이지**<br/>
+
+    - "포켓몬 도감 시작하기" 버튼을 클릭하여 도감 페이지로 이동합니다.
+
+2. **도감 페이지**<br/>
+
+    - **대시보드**: 선택한 6개의 포켓몬 카드가 표시됩니다. 카드의 삭제버튼을 클릭하여 선택을 해제할 수 있습니다.<br/>
+    - **포켓몬 리스트**: 포켓몬 리스트를 확인할 수 있으며, 카드의 추가버튼을 클릭하여 대시보드에 포켓몬을 추가할 수 있습니다.<br/>
+    - **포켓몬 카드 컴포넌트**: 포켓몬의 이미지, 이름, 아이디를 확인할 수 있으며, '추가' 또는 '삭제' 버튼을 사용해 포켓몬을 대시보드에 추가하거나 삭제할 수 있습니다. 포켓몬 카드를 클릭하면 해당 포켓몬의 상세 정보를 보여주는 포켓몬 디테일 페이지로 이동합니다.<br/>
+
+3. **포켓몬 디테일 페이지**<br/>
+    - 포켓몬의 이미지, 이름, 타입, 설명을 확인할 수 있습니다."돌아가기" 버튼으로 도감 페이지로 이동합니다.<br/><br/>
+
+## 주요 기능
+
+-   **도감 페이지**<br/>
+
+    -   **Create**: `useState` 대시보드 포켓몬 추가<br/>
+    -   **Read**: `map` 포켓몬 카드 출력<br/>
+    -   **Update**: `find` 대시보드 포켓몬 추가 시 중복 확인<br/>
+    -   **Delete**: `filter` 대시보드 포켓몬 삭제<br/>
+
+-   **페이지 이동**<br/>
+
+    -   `react-router-dom` - `navigate` 페이지 간 이동<br/>
+    -   `searchParams` 포켓몬 ID를 추출하여 디테일 페이지로 이동<br/>
+
+-   **상태 관리**<br/>
+    -   `Context API`로 컴포넌트 간 데이터 전달 및 상태 관리
+
+#### 개발 환경
+
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
