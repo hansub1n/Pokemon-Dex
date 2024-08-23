@@ -45,25 +45,25 @@ const PockemonCard = ({ pokemon, isSelected }) => {
 				}}
 			>
 				<StCardImg src={img_url} />
-				<p>{korean_name}</p>
-				<p>No.{id}</p>
+				<StCardName>{korean_name}</StCardName>
+				<StCardId>No.{id}</StCardId>
 			</div>
 			{isSelected ? (
-				<button
+				<StCardBtn
 					onClick={() => {
 						removePokemon(pokemon);
 					}}
 				>
 					삭제
-				</button>
+				</StCardBtn>
 			) : (
-				<button
+				<StCardBtn
 					onClick={() => {
 						addPokemon(pokemon);
 					}}
 				>
 					추가
-				</button>
+				</StCardBtn>
 			)}
 		</StCard>
 	);
@@ -84,9 +84,38 @@ const StCard = styled.div`
 	border-radius: 10px;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
 	cursor: pointer;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+	&:hover {
+		transform: scale(1.02);
+		box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 12px;
+	}
 `;
 
 const StCardImg = styled.img`
 	width: 100px;
 	height: 100px;
+`;
+
+const StCardName = styled.p`
+	font-size: 16px;
+	font-weight: 700;
+	margin: 5px 0;
+`;
+const StCardId = styled.p`
+	font-size: 12px;
+	color: #666666;
+	margin: 10px 0;
+`;
+const StCardBtn = styled.button`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 12px;
+	width: 50px;
+	height: 27px;
+	margin: 10px 0 0;
+	padding: 5px 9px;
+	box-sizing: border-box;
+	cursor: pointer;
 `;

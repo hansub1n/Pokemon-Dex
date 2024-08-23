@@ -24,13 +24,13 @@ const Detail = () => {
 			<StDetailP>타입: {types.join(", ")}</StDetailP>
 			<StDetailP>{description}</StDetailP>
 
-			<button
+			<StDetailBtn
 				onClick={() => {
 					navigate("/dex");
 				}}
 			>
 				뒤로 가기
-			</button>
+			</StDetailBtn>
 		</StDetail>
 	);
 };
@@ -45,6 +45,8 @@ const StDetail = styled.div`
 	height: 90vh;
 `;
 const StDetailtitle = styled.h1`
+	font-weight: 900;
+	font-style: normal;
 	font-size: 50px;
 	margin-bottom: 70px;
 `;
@@ -62,4 +64,15 @@ const StDetailName = styled.p`
 
 const StDetailP = styled.p`
 	margin-bottom: 30px;
+`;
+
+const StDetailBtn = styled.button`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 15px;
+	width: 100px;
+	height: 40px;
+	padding: 7px 10px;
+	box-sizing: border-box;
 `;

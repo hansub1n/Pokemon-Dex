@@ -10,7 +10,7 @@ const Dashboard = () => {
 		return (
 			<StDashboard>
 				<div>
-					<StDashboardtitle>포켓몬 선택</StDashboardtitle>
+					<StDashboardImg src="https://react-6-pokemon.vercel.app/assets/pokemon-logo-RN0wntMB.png" />
 					<p>선택된 포켓몬이 없습니다!</p>
 				</div>
 			</StDashboard>
@@ -19,7 +19,7 @@ const Dashboard = () => {
 		return (
 			<StDashboard>
 				<div>
-					<StDashboardtitle>포켓몬 선택</StDashboardtitle>
+					<StDashboardImg src="https://react-6-pokemon.vercel.app/assets/pokemon-logo-RN0wntMB.png" />
 					<StSelectedPokemonCards>
 						{selectedPokemons.map((pokemon) => {
 							return (
@@ -50,8 +50,10 @@ const StDashboard = styled.div`
 	border-radius: 15px;
 	box-sizing: border-box;
 `;
-const StDashboardtitle = styled.h1`
-	margin: 10px 0;
+const StDashboardImg = styled.img`
+	width: 150px;
+	height: 55x;
+	margin-bottom: 10px;
 `;
 
 const StSelectedPokemonCards = styled.div`

@@ -5,14 +5,15 @@ const Home = () => {
 	const navigate = useNavigate();
 	return (
 		<StHome>
-			<h1>포켓몬 도감</h1>
-			<button
+			<StHomeImg src="https://react-6-pokemon.vercel.app/assets/pokemon-logo-RN0wntMB.png" />
+			<StHomeBtn
 				onClick={() => {
 					navigate("/dex");
 				}}
 			>
+				{" "}
 				포켓몬 도감 시작하기
-			</button>
+			</StHomeBtn>
 		</StHome>
 	);
 };
@@ -25,4 +26,19 @@ const StHome = styled.div`
 	justify-content: center;
 	align-items: center;
 	height: 90vh;
+`;
+const StHomeImg = styled.img`
+	width: 600px;
+	height: 220px;
+	margin-bottom: 20px;
+`;
+const StHomeBtn = styled.button`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 15px;
+	width: 200px;
+	height: 40px;
+	padding: 10px 20px;
+	box-sizing: border-box;
 `;
