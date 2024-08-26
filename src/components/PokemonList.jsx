@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import PockemonCard from "./PockemonCard";
 import styled from "styled-components";
 

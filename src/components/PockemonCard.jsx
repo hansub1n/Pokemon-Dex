@@ -4,12 +4,12 @@ import styled from "styled-components";
 import { PokemonContext } from "../context/PokemonContext";
 
 const PockemonCard = ({ pokemon, isSelected }) => {
-	const { img_url, korean_name, id } = pokemon;
-
 	const navigate = useNavigate();
 
 	const { selectedPokemons, setSelectedPokemons } =
 		useContext(PokemonContext);
+
+	const { img_url, korean_name, id } = pokemon;
 
 	const addPokemon = (newPokemon) => {
 		const existedPokemon = (targetPokemon) => {
@@ -46,7 +46,7 @@ const PockemonCard = ({ pokemon, isSelected }) => {
 			>
 				<StCardImg src={img_url} />
 				<StCardName>{korean_name}</StCardName>
-				<StCardId>No.{id}</StCardId>
+				<StCardId>No.{String(id).padStart(3, "0")}</StCardId>
 			</div>
 			{isSelected ? (
 				<StCardBtn
