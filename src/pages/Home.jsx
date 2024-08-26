@@ -1,11 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import logo from "../assets/pokemon-logo-RN0wntMB.png";
+
 const Home = () => {
 	const navigate = useNavigate();
 	return (
 		<StHome>
-			<StHomeImg src="https://react-6-pokemon.vercel.app/assets/pokemon-logo-RN0wntMB.png" />
+			<StHomeImg src={logo} />
 			<StHomeBtn
 				onClick={() => {
 					navigate("/dex");
