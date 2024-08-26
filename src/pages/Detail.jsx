@@ -26,7 +26,7 @@ const Detail = () => {
 
 			<StDetailBtn
 				onClick={() => {
-					navigate("/dex");
+					navigate(-1);
 				}}
 			>
 				뒤로 가기

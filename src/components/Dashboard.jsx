@@ -8,12 +8,8 @@ import pokeball from "../assets/pokeball-13iwdk7Y.png";
 const Dashboard = () => {
 	const { selectedPokemons } = useContext(PokemonContext);
 
-	const maxPokeball = 6;
-
 	const displayPokeball =
-		selectedPokemons.length === 0
-			? maxPokeball
-			: maxPokeball - selectedPokemons.length;
+		selectedPokemons.length === 0 ? 6 : 6 - selectedPokemons.length;
 
 	const pokeballs = [];
 
