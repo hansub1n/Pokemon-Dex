@@ -3,7 +3,7 @@
 #### 리액트 숙련주차 개인과제
 
 포켓몬 도감을 구현한 웹 애플리케이션입니다. 사용자는 포켓몬 리스트에서 포켓몬을 선택하고, 선택한 포켓몬의 상세 정보를 확인할 수 있습니다.<br/><br/>
-![alt text](src\assets\image.png)![alt text](src\assets\image-1.png)![alt text](src\assets\image-2.png)
+![이미지 1](src/assets/image.png)![이미지 2](src/assets/image-1.png)![이미지 3](src/assets/image-2.png)
 
 #### 프로젝트 구조
 
