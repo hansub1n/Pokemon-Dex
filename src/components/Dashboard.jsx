@@ -1,12 +1,13 @@
-import React, { useContext } from "react";
 import PockemonCard from "./PockemonCard";
 import styled from "styled-components";
-import { PokemonContext } from "../context/PokemonContext";
 import logo from "../assets/pokemon-logo-RN0wntMB.png";
 import pokeball from "../assets/pokeball-13iwdk7Y.png";
+import { useSelector } from "react-redux";
 
 const Dashboard = () => {
-	const { selectedPokemons } = useContext(PokemonContext);
+	const selectedPokemons = useSelector((state) => {
+		return state.selectedPokemons;
+	});
 
 	const displayPokeball =
 		selectedPokemons.length === 0 ? 6 : 6 - selectedPokemons.length;
@@ -15,12 +16,8 @@ const Dashboard = () => {
 
 	for (let i = 0; i < displayPokeball; i++) {
 		pokeballs.push(
-			<div>
-				<StDashboardPokeballImg
-					src={pokeball}
-					alt="Pokeball Icon"
-					key={i}
-				/>
+			<div key={i}>
+				<StDashboardPokeballImg src={pokeball} alt="Pokeball Icon" />
 			</div>
 		);
 	}

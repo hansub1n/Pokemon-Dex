@@ -1,17 +1,20 @@
-import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { PokemonContext } from "../context/PokemonContext";
+import { useDispatch, useSelector } from "react-redux";
+import {
+	addPokemon,
+	removePokemon,
+} from "../redux/slices/selectedPokemonsSlice";
 
 const PockemonCard = ({ pokemon, isSelected }) => {
 	const navigate = useNavigate();
 
-	const { selectedPokemons, setSelectedPokemons } =
-		useContext(PokemonContext);
+	const selectedPokemons = useSelector((state) => state.selectedPokemons);
+	const dispatch = useDispatch();
 
 	const { img_url, korean_name, id } = pokemon;
 
-	const addPokemon = (newPokemon) => {
+	const handleAddPokemon = (newPokemon) => {
 		const existedPokemon = (targetPokemon) => {
 			return selectedPokemons.find(
 				(pokemon) => pokemon.korean_name === targetPokemon.korean_name
@@ -25,16 +28,11 @@ const PockemonCard = ({ pokemon, isSelected }) => {
 			alert("포켓몬은 최대 여섯개까지만 선택 가능합니다.");
 			return;
 		}
-		setSelectedPokemons(() => {
-			return [...selectedPokemons, newPokemon];
-		});
+		dispatch(addPokemon(newPokemon));
 	};
 
-	const removePokemon = (targetPokemon) => {
-		const filteredPokemon = selectedPokemons.filter(
-			(pokemon) => pokemon.korean_name !== targetPokemon.korean_name
-		);
-		setSelectedPokemons(filteredPokemon);
+	const handleRemovePokemon = (targetPokemon) => {
+		dispatch(removePokemon(targetPokemon.id));
 	};
 
 	return (
@@ -49,19 +47,11 @@ const PockemonCard = ({ pokemon, isSelected }) => {
 				<StCardId>No.{String(id).padStart(3, "0")}</StCardId>
 			</div>
 			{isSelected ? (
-				<StCardBtn
-					onClick={() => {
-						removePokemon(pokemon);
-					}}
-				>
+				<StCardBtn onClick={() => handleRemovePokemon(pokemon)}>
 					삭제
 				</StCardBtn>
 			) : (
-				<StCardBtn
-					onClick={() => {
-						addPokemon(pokemon);
-					}}
-				>
+				<StCardBtn onClick={() => handleAddPokemon(pokemon)}>
 					추가
 				</StCardBtn>
 			)}
